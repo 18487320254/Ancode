@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>账本-记账</title>
+    <style>
+        .bot{
+            width: 100%;
+            height: 4em;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            border: none;
+            border-top: 1px solid #cdcdcd;
+        }
+        .bot_item{
+            float: left;
+            width: 33.33%;
+            height: 100%;
+            text-align: center;
+            padding-top: 0.5em;
+        }
+        .top{
+            width: 100%;
+            height: 3em;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: #000000;
+            border: none;
+            border-bottom: 1px solid #cdcdcd;
+        }
+        .top_top{
+            height: 3em;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #4F4F4F;
+        }
+        .top_top_sel{
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 0.7em;
+            margin: 0;
+        }
+        .cen{
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 3em;
+            bottom: 4em;
+            border: none;
+            background-color: #f2f2f2;
+            padding: 0.5em;
+            padding-top: 8em;
+            overflow: auto;
+            text-align: center;
+        }
+        .cen_headimg{
+            width: 7em;
+            height: 7em;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .cen_info{
+            font-size: 1.4em;
+            margin-top: 0.7em;
+        }
+    </style>
+</head>
+<body>
+    <div class="bot">
+        <div class="bot_item"><i class="fa fa-list-ol fa-lg fa-fw"></i><br>记&nbsp;账</div>
+        <div class="bot_item" style="color: #00BFFF;"><i class="fa fa-pie-chart fa-lg fa-fw"></i><br>统&nbsp;计</div>
+        <div class="bot_item"><i class="fa fa-user-md fa-lg fa-fw"></i><br>我&nbsp;的</div>
+    </div>
+
+    <div class="top">
+        <div class="top_top">
+            <p class="top_top_sel">我的<i class="fa fa-sign-out" style="float: right;padding-top: 0.3em;"></i></p>
+        </div>
+    </div>
+
+    <div class="cen">
+        <img class="cen_headimg" src="img/logo.jpg" alt="">
+        <p class="cen_info">18487320254 
+            <br><font data-toggle="modal" data-target="#myModal" style="font-size: 0.7em;color: #00BFFF;cursor: pointer;">手机换绑</font></p>
+    </div>
+
+      <!-- 模态框 -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+   
+        <!-- 模态框头部 -->
+        <div class="modal-header">
+          <h4 class="modal-title">手机换绑</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+   
+        <!-- 模态框主体 -->
+        <div class="modal-body">
+            请输入新的手机号：
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Email" id="demo" name="email">
+              <div class="input-group-append">
+                <span class="input-group-text" style="cursor: pointer;">获取验证码</span>
+              </div>
+            </div>
+        </div>
+   
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css/font-awesome.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>账本-记账</title>
+    <style>
+        .bot{
+            width: 100%;
+            height: 4em;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            border: none;
+            border-top: 1px solid #cdcdcd;
+        }
+        .bot_item{
+            float: left;
+            width: 33.33%;
+            height: 100%;
+            text-align: center;
+            padding-top: 0.5em;
+        }
+        .top{
+            width: 100%;
+            height: 7em;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: #000000;
+            border: none;
+            border-bottom: 1px solid #cdcdcd;
+        }
+        .top_top{
+            height: 3em;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid #4F4F4F;
+        }
+        .top_top_sel{
+            height: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: white;
+        }
+        .top_bot{
+            height: 4em;
+            width: 100%;
+            background-color: #000000;
+            color: #cdcdcd;
+            padding-top: 0.5em;
+        }
+        .top_bot_item{
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            float: left;
+        }
+        .cen{
+            width: 100%;
+            position: fixed;
+            left: 0;
+            top: 7em;
+            bottom: 4em;
+            border: none;
+            background-color: #f2f2f2;
+            padding: 0.5em;
+            overflow: auto;
+        }
+        .cen_p{
+            background-color: white;
+            border-radius: 5px;
+            padding: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        .cen_p_img{
+            width: 2em;
+            height:2em;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: -.5em;
+        }
+        .cen_p_txt{
+            font-size: 1.3em;
+        }
+    </style>
+</head>
+<body>
+    <div class="bot">
+        <div class="bot_item"><i class="fa fa-list-ol fa-lg fa-fw"></i><br>记&nbsp;账</div>
+        <div class="bot_item" style="color: #00BFFF;"><i class="fa fa-pie-chart fa-lg fa-fw"></i><br>统&nbsp;计</div>
+        <div class="bot_item"><i class="fa fa-user-md fa-lg fa-fw"></i><br>我&nbsp;的</div>
+    </div>
+
+    <div class="top">
+        <div class="top_top">
+            <!--
+            <font class="top_top_sel" style="font-size: 1.2em;">归类统计</font>
+            -->
+            <select class="top_top_sel" name="" id="">
+                <option value="">2018</option>
+                <option value="">2019</option>
+            </select>
+            <select class="top_top_sel" name="" id="">
+                <option value="">1月</option>
+                <option value="">2月</option>
+                <option value="">3月</option>
+            </select>
+            <i class="fa fa-filter" style="float: right;color: white;height: 2em;padding: 1em;"></i>
+        </div>
+        <div class="top_bot">
+            <div class="top_bot_item" style="border-right:1px solid #4F4F4F;color:#00BFFF;">
+                <font><font style="font-size: 1.1em;">￥1236.45</font><br>收入</font>
+            </div>
+            <div class="top_bot_item">
+                <font><font style="font-size: 1.1em;">￥1256.45</font><br>支出</font>
+            </div>
+        </div>
+    </div>
+
+    <div class="cen">
+        <p class="cen_p">
+            <img class="cen_p_img" src="img/logo.jpg" alt="">
+            <font class="cen_p_txt">交通</font>
+            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
+        </p>
+        <p class="cen_p">
+            <img class="cen_p_img" src="img/logo.jpg" alt="">
+            <font class="cen_p_txt">住宿</font>
+            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
+        </p>
+        <p class="cen_p">
+            <img class="cen_p_img" src="img/logo.jpg" alt="">
+            <font class="cen_p_txt">娱乐</font>
+            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
+        </p>
+    </div>
+</body>
+</html>
