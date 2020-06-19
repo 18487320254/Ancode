@@ -36,7 +36,8 @@ public class Login extends HttpServlet {
 		if (type.equals("getcode")) {//获取验证码
 			String phone=Base.get(request, "phone");
 			String code=Base.Code();
-			String cent="";
+			String cent="亲爱的朋友您好，您本次手机验证码为"+code+"，桉光科技祝您生活愉快！【桉光科技】";
+			System.out.println(cent);
 			try {
 				if (I_Sms.sendms_jisu(phone,cent)) {
 					session.setAttribute("User_phone", phone);
@@ -64,6 +65,7 @@ public class Login extends HttpServlet {
 					par=phone+","+Base.Time();
 					if (D_Dao.Up(sql, par)) {
 						Connection conn=D_Base.Opendb();
+						sql="select * from user where phone=?";
 						ResultSet rs=D_Dao.Select(conn, sql, phone);
 						User user=D_Dao.getBean_User(rs);
 						if (user!=null) {
@@ -75,7 +77,7 @@ public class Login extends HttpServlet {
 					} else {
 						Base.put("n_do", response);
 					}
-				} else {//老用户
+				} else {//老用户 
 					Connection conn=D_Base.Opendb();
 					ResultSet rs=D_Dao.Select(conn, sql, phone);
 					User user=D_Dao.getBean_User(rs);

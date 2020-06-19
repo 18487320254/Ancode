@@ -35,7 +35,7 @@ public class GetData extends HttpServlet {
 		User user=(User) session.getAttribute("User_Now");
 		if (Base.isLogin(request, "User_Now")) {
 			if (type.equals("get_list_order")) {//获取账单列表
-				sql="select * from order where uid=? order by id desc";
+				sql="select * from `order` where uid=? order by id desc";
 				json=D_Dao.SelecttoJson(sql, user.getId()+"");
 				Base.put(json, response);
 			} else if(type.equals("get_list_order_total")){//

@@ -40,7 +40,7 @@ public class SetData extends HttpServlet {
 				String time=Base.Time();//2020-02-12 12:12:12
 				String year=time.split("-")[0];
 				String month=time.split("-")[1];
-				sql="insert into order(uid,type,remarks,total,time,year,month) values(?,?,?,?,?,?,?)";
+				sql="insert into `order`(uid,type,remarks,total,time,year,month) values(?,?,?,?,?,?,?)";
 				par=user.getId()+","+nowtype+","+remark+","+total+","+time+","+year+","+month;
 				if (D_Dao.Up(sql, par)) {
 					Base.put("yes", response);

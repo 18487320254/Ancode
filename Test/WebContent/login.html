@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/base.js"></script>
     <title>账本-登录</title>
     <style>
         body{
@@ -39,23 +42,46 @@
 </head>
 
 <body>
-    <div class="main_div" style="display: none;">
+    <div class="main_div" id="main1">
         <p style="float: left;margin-left: 10%;">请输入您的手机号：</p>
-        <input type="number" maxlength="11" class="m_p" type="text" placeholder="请输入手机号......"><br>
-        <button class="m_btn">确 认</button>
+        <input id="phone" type="number" maxlength="11" class="m_p" type="text" placeholder="请输入手机号......"><br>
+        <button id="getcode" class="m_btn">确 认</button>
     </div>
     
-    <div class="main_div">
+    <div class="main_div" id="main2" style="display: none;">
         <p style="float: left;margin-left: 10%;">请输入您收到的验证码：</p>
-        <input type="number" maxlength="6" class="m_p" type="text" placeholder="请输入验证码......"><br>
-        <button class="m_btn">安全登录</button>
+        <input id="code" type="number" maxlength="6" class="m_p" type="text" placeholder="请输入验证码......"><br>
+        <button class="m_btn" id="login">安全登录</button>
     </div>
 
     <div class="bot">
         <img src="img/logo.jpg" alt="" class="bot_img"><br>
         <font style="font-size: 0.6em;color: #f5f5f5;">版权所有 @ 软件宝宝</font>
     </div>
-
+<script>
+$("#getcode").click(function (e) { 
+    var phone=$("#phone").val();
+    if (phone!=null&&phone.length==11) {
+        var par='type=getcode&phone='+phone;
+        An_ajax(function(){
+            $("#main1").css("display", "none");
+            $("#main2").css("display", "block");
+        },"Login",par,"post");
+    }else{
+        alert('请输入有效的手机号！');
+    }
+});
+$("#login").click(function (e) { 
+    var code=$("#code").val();
+    if (code!=null&&code.length==6) {
+        var par='type=login&code='+code;
+        An_ajax(function(){
+            An_go('index.html');
+        },"Login",par,"post");
+    }else{
+        alert('请输入有效的验证码！');
+    }
+});
+</script>
 </body>
-
 </html>

@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class D_Base {
 	private static String driver="com.mysql.jdbc.Driver";//数据库驱动
 	private static String url="jdbc:mysql://localhost:3306/test?useSSL=false&characterEncoding=utf-8&useOldAliasMetadataBehavior=true";//数据库地址访问
-	private static String username="test";//用户名
-	private static String password="123456";//密码
+	private static String username="root";//用户名
+	private static String password="xqsd.123";//密码
 	static Connection conn=null;
 	//建立数据库连接
 	public static Connection Opendb(){

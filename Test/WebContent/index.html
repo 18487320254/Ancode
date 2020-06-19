@@ -8,6 +8,7 @@
     <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/base.js"></script>
     <title>账本-记账</title>
     <style>
         .bot{
@@ -104,7 +105,6 @@
         <div class="bot_item"><i class="fa fa-pie-chart fa-lg fa-fw"></i><br>统&nbsp;计</div>
         <div class="bot_item"><i class="fa fa-user-md fa-lg fa-fw"></i><br>我&nbsp;的</div>
     </div>
-
     <div class="top">
         <div class="top_top">
             <!--
@@ -134,72 +134,90 @@
         </div>
     </div>
 
-    <div class="cen">
+    <div class="cen" id="list">
+        <!--
         <p class="cen_p">
             <img class="cen_p_img" src="img/logo.jpg" alt="">
             <font class="cen_p_txt">老爸给我发工资了</font>
             <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
         </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
-        <p class="cen_p">
-            <img class="cen_p_img" src="img/logo.jpg" alt="">
-            <font class="cen_p_txt">老爸给我发工资了</font>
-            <font class="cen_p_txt" style="color: red;float: right;">￥1500.00</font>
-        </p>
+        -->
     </div>
+    <img src="img/add.png" data-toggle="modal" data-target="#myModal" alt="" style="position: fixed;bottom: 4.5em;right: 0.5em;width: 3em;height: 3em;">
+    <!-- 模态框 -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+ 
+      <!-- 模态框头部 -->
+      <div class="modal-header">
+        <h4 class="modal-title">添加账单</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+ 
+      <!-- 模态框主体 -->
+      <div class="modal-body">
+          请输入账单信息：
+          <div class="mb-3">
+            <select id="type1" class="form-control" id="sel1">
+              <option value="+">收入</option>
+              <option value="-">支出</option>
+            </select><br>
+            <select id="type" class="form-control" id="sel1">
+              <option value="水电">水电</option>
+              <option value="房租">房租</option>
+              <option value="娱乐">娱乐</option>
+              <option value="购物">购物</option>
+              <option value="学习">学习</option>
+              <option value="其它">其它</option>
+            </select><br>
+            <input type="number" class="form-control" id="total"><br>
+            <input type="text" class="form-control" id="remarks"><br>
+            <button id="add" type="button" class="btn btn-primary">记 一 笔</button>
+          </div>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+<script>
+    var m_order='<p class="cen_p"><img class="cen_p_img" src="img/logo.jpg" alt="">'
+            +'<font class="cen_p_txt"> dada-remarks</font>'
+            +'<font class="cen_p_txt" style="color: red;float: right;">￥dada-total</font></p>';
+    window.onload=function(){
+            var par='type=get_list_order';
+            An_ajax(function(rs){
+                var obj=jQuery.parseJSON(rs);
+                var myhtml='';
+                for (let i = 0; i < obj.length; i++) {
+                    myhtml+=m_order.replace(/dada-remarks/g, obj[i].remarks)
+                    .replace(/dada-total/g, obj[i].total);
+                }
+                $("#list").html(myhtml);
+            },"GetData",par,"post");
+    }
+    $("#add").click(function (e) { 
+        var type1=$("#type1").val();
+        var nowtype=$("#type").val();
+        var total=$("#total").val();
+        var remarks=$("#remarks").val();
+        if (total!=null&&remarks!=null) {
+            if (type1=='-') {
+                total='-'+total;
+            }
+            var par='type=add_order&nowtype='+nowtype+'&remarks='+remarks+'&total='+total;
+            An_ajax(function(rs){
+                if (rs=='yes') {
+                    window.location.reload();
+                } else {
+                    alert('操作失败，请重试！');
+                }
+            },"SetData",par,"post");
+        }else{
+            alert('请输入有效的账单信息！');
+        }
+    });
+    </script>
+
 </body>
 </html>
